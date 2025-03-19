@@ -1,0 +1,35 @@
+.Element1 {
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    border: 1px solid black;
+    /* animation: pulsieren 2s infinite alternate; */
+    animation-name: pulsieren;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+
+}
+
+@keyframes pulsieren {
+    0%{
+        background-color: red;
+        margin-left: 0px;
+    }
+    10%{
+        background-color: purple;
+        margin-left: 20px;
+        width: 200px;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100%{
+        background-color: green;
+    }
+}
+
+img:hover{
+    transform: scale(2,2);
+}
