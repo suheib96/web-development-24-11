@@ -70,7 +70,8 @@ app.get("/users/:id", (req, res) => {
     res.status(404).send("User mit deiner ID nicht gefunden. ID: " + id);
   }
 });
-app.use(express.json()); // -> Ermöglicht, dass ein Body über den Request mitgeschickt wird
+
+app.use(express.json()); // Middleware -> Ermöglicht, dass ein Body über den Request mitgeschickt wird 
 
 app.post("/users", (req, res) => {
   const { city, name } = req.body; // Destructuring
@@ -85,4 +86,20 @@ app.post("/users", (req, res) => {
   res.json(users);
 });
 
+app.put("/users/:id", (req,res) => {
+    const id = req.params.id
+    const newCity = req.body.city
+
+    const foundUser = users.find(user => user.id == id)
+    foundUser.city = newCity
+    res.json(foundUser)
+})
+
+app.delete("/users/:id", (req,res) => {
+    const id = req.params.id
+    const index = users.findIndex(user => user.id == id)
+    users.splice(index,1)
+
+    res.send(users)
+})
 app.listen(5005);
