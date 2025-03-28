@@ -36,4 +36,24 @@ app.post("/tiere" , (req,res) => {
     }
 })
 
+app.put("/tiere/:id", (req, res) => {
+    const id = req.params.id;
+    const tiere = readFile(); // Datei aufrufen
+    const newArt = req.body.art
+
+    const foundTier = tiere.find(tier => tier.id == id)
+    foundTier.art = newArt
+    res.json(foundTier)
+    writeFile(tiere) // in Datei reinschreiben
+})
+
+
+app.delete("/tiere/:id", (req, res) => {
+    const id = req.params.id;
+    const tiere = readFile();
+    const index = tiere.findIndex(tier => tier.id == id)
+    const entferntesTier = tiere.splice(index, 1)
+    writeFile(tiere)
+    res.json("erfolgreich gelöscht: " + entferntesTier[0].name)
+})
 app.listen(5005);

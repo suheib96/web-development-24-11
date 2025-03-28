@@ -1,21 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Moro",
+    "name": "Haku",
     "art": "Katze"
   },
   {
     "id": 2,
-    "name": "Haku",
-    "art": "Katze"
-  },
-  {
-    "id": 3,
-    "name": "Haku"
-  },
-  {
-    "id": 4,
-    "name": "Haku",
+    "name": "Moro",
     "art": "Katze"
   }
 ]
