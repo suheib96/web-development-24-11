@@ -3,7 +3,7 @@ const cors = require("cors")
 const app = express();
 const fs  = require("fs"); // File System Modul, damit können wir Dateien lesen und schreiben
 app.use(express.json()); // Unsere Middleware, die uns ermöglicht den Body aus dem Request auszulesen
-app.use(cors({
+app.use(cors({              // CORS (Cross origin resource sharing) aktivieren 
     origin: "http://localhost:5500"
 }))
 
