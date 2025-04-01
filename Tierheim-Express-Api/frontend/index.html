@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tierheim API</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Neues Tier anlegen</h1>
-    <form id="form">
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="art" placeholder="Tierart">
-        <button type="button" id="submitButton">Anlegen</button>
-    </form>
-
-    <p id="antwort"></p>
+    <div>
+        <h1>Tiere verwalten</h1>
+        <form id="form">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="art" placeholder="Tierart">
+            <input type="number" id="nummer" placeholder="id" style="display:none">
+            <br>
+            <select id="method" name="Methode">
+                <option value="create">Tier anlegen</option>
+                <option value="delete">Tier löschen</option>
+                <option value="change">Tier ändern</option>
+            </select>
+            <button type="button" id="submitButton">Anlegen</button>
+        </form>
+    </div>
+    <div>
+        <p id="antwort"></p>
+        <ul id="liste"></ul>
+    </div>
 </body>
 </html>
