@@ -1,11 +1,17 @@
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 const app = express();
 const fs  = require("fs"); // File System Modul, damit können wir Dateien lesen und schreiben
+const path = require("path");
 app.use(express.json()); // Unsere Middleware, die uns ermöglicht den Body aus dem Request auszulesen
-app.use(cors({              // CORS (Cross origin resource sharing) aktivieren 
-    origin: "http://localhost:5500"
-}))
+
+// -- CORS brauchen wir nur, wenn zwei verschiedene Hosts kommunizieren sollen --
+//app.use(cors({              // CORS (Cross origin resource sharing) aktivieren 
+//    origin: "http://localhost:5500"
+//}))
+
+// Frontend dateien mit express serven:
+app.use(express.static(path.join(__dirname, "frontend")))
 
 // Hilfsfunktion
 function readFile(){
@@ -78,12 +84,14 @@ app.put("/tiere/:id", (req, res) => {
 
 app.delete("/tiere/:id", (req, res) => {
     try {
-        const id = req.params.id;
+        let id = req.params.id;
         // Ist ID eine Zahl?
         if (isNaN(id)) {
             return res.status(400).json({error: "ID muss eine Zahl sein!"})
         }
+        id = Number(id)
         const tiere = readFile();
+        console.log(`id: ${typeof(id)}`)
         const index = tiere.findIndex(tier => tier.id === id)
         // Haben wir das tier gefunden?
         if (index === -1){
