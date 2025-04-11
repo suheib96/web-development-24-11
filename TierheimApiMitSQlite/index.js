@@ -27,6 +27,7 @@ db.serialize(() => {
     })
 })
 
+app.use(express.json()) // Ermöglicht Express Json aus einem Body auszulesen
 app.get("/", (req,res) => {
     res.send("Die API funktioniert!")
 })
@@ -42,7 +43,8 @@ app.get("/tiere", (req,res) => {
 })
 
 app.post("/tiere", (req,res) => {
-    db.run(`INSERT INTO tiere (tierart,name,krankheit,age,gewicht) VALUES("Katze","Haku","gesund",4,8.4)`)
+    const {tierart, name, krankheit, age, gewicht} = req.body
+    db.run(`INSERT INTO tiere (tierart,name,krankheit,age,gewicht) VALUES(?,?,?,?,?)`,[tierart,name,krankheit,age,gewicht])
     res.status(201).send("Tier wurde erfolgreich hinzugefügt")
 })
 app.listen(3000)
