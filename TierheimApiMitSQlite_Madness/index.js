@@ -12,7 +12,6 @@ db.serialize(() => {
     krankheit VARCHAR(100),
     age INT,
     gewicht REAL);`)
-    // db.run(`INSERT INTO tiere(tierart,name,krankheit,age,gewicht) VALUES ("Hund","Bello","husten",5,12.4)`)
 
     selectAllTiereQuery = `SELECT * FROM tiere`
 
@@ -31,10 +30,6 @@ db.serialize(() => {
 app.use(express.json()) // Ermöglicht Express Json aus einem Body auszulesen
 app.use(express.static("public"))
 
-// app.get("/", (req,res) => {
-//     res.send("Die API funktioniert!")
-// })
-
 app.get("/tiere", (req,res) => {
     db.all(selectAllTiereQuery, (err,rows) => {
         if(err){
@@ -51,6 +46,11 @@ app.post("/tiere", (req,res) => {
     res.status(201).send("Tier wurde erfolgreich hinzugefügt")
 })
 
+app.delete("/tiere/:id", (req, res) => {
+    const id = req.params.id;
+    db.run(`DELETE FROM tiere WHERE id = ?`, [id])
+    res.send("Eintrag gelöscht")
+})
 
 app.listen(3000)
 
