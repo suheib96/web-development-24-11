@@ -16,7 +16,7 @@ const createTable = async () => {
   try {
     await client.query(`
     CREATE TABLE IF NOT EXISTS tiere (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     tierart VARCHAR(50),
     name VARCHAR(50),
     krankheit VARCHAR(100),
