@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Footer from './Footer';
+import Komponente from './Komponente';
+import ChartsOverviewDemo from './ChartsOverviewDemo';  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <Komponente Name="Max" />
+    <Komponente Name="Suheib" />
+    <Komponente Name="Hans" />
+    <ChartsOverviewDemo />
+    <Footer />
   </React.StrictMode>
 );
 
