@@ -1,5 +1,86 @@
-git status - zeigt an welche Dateien getracked oder untracked sind (Auf dem Stapel zum abholen gelegt oder nicht)
-git add * - Legt alle  Dateien auf den Stapel zum abholen
-git add <dateinamen> - Legt eine bestimmte Datei auf den Stapel zum abholen
-git commit -m "meine Nachricht" - setzt auf die Dateien die auf dem Stapel liegt eine feste Nachricht drauf
-git push - Holt den Stapel mit der Nachricht ab und lädt sie ins Repository hoch 
+
+🧠 Git-Befehle einfach erklärt
+
+🔍 git status
+Zeigt den aktuellen Zustand deines Repositories:
+- Welche Dateien wurden geändert?
+- Welche sind bereit zum Commit?
+- Gibt es unversionierte Dateien?
+
+➕ git add *
+Fügt alle Änderungen (neue, geänderte und gelöschte Dateien) zur Staging-Area hinzu.
+Achtung: Kann auch unerwünschte Dateien einfügen.
+
+➕ git add <dateiname>
+Fügt eine bestimmte Datei zur Staging-Area hinzu.
+Beispiel: git add index.html
+
+✅ git commit -m "meine Nachricht"
+Speichert gestagete Änderungen mit einer Nachricht im Repository.
+Beispiel: git commit -m "Fix: Bug im Login-Formular behoben"
+
+📤 git push
+Lädt deine lokalen Commits auf das entfernte Repository.
+Beispiel: git push origin main
+
+🌿 git branch
+Zeigt alle lokalen Branches an und markiert den aktuellen Branch mit *.
+
+🔄 git checkout <branchname>
+Wechselt in einen anderen Branch.
+Beispiel: git checkout feature/todo-list
+
+🔀 git merge <branchname>
+Fügt die Änderungen eines anderen Branches in den aktuellen ein.
+Beispiel: git merge feature/todo-list
+
+🌐 git remote -v
+Zeigt alle eingerichteten Remote-Repositories mit ihren URLs.
+
+➕ git remote add upstream <URL>
+Fügt ein neues Remote namens 'upstream' hinzu (z.B. Originalprojekt bei Forks).
+Beispiel: git remote add upstream https://github.com/original/project.git
+
+⬇️ git fetch upstream
+Holt Änderungen vom Remote 'upstream', ohne sie zu mergen.
+
+🔄 git merge upstream/<branchname>
+Merged den Branch vom 'upstream' in deinen aktuellen Branch.
+Beispiel: git merge upstream/main
+
+📥 git pull
+Holt Änderungen vom Remote-Repository und merged sie direkt in deinen aktuellen Branch.
+Beispiel: git pull origin main
+
+🧼 git stash
+Speichert ungestagete Änderungen temporär, um z.B. den Branch zu wechseln, ohne Änderungen zu verlieren.
+Beispiel: git stash
+
+🔄 git stash pop
+Holt die zuletzt gespeicherten Änderungen aus dem Stash zurück.
+Beispiel: git stash pop
+
+📜 git log
+Zeigt die Commit-Historie mit SHA, Autor, Datum und Commit-Nachricht.
+Beispiel: git log
+
+📄 git diff
+Zeigt den Unterschied zwischen Arbeitsverzeichnis und Staging-Area oder zwischen zwei Commits.
+Beispiel: git diff
+Beispiel: git diff HEAD~1 HEAD
+
+🧹 git clean -fd
+Entfernt unversionierte Dateien und Verzeichnisse. Vorsicht: Diese Aktion ist nicht rückgängig zu machen!
+Beispiel: git clean -fd
+
+🔍 git show <commit-hash>
+Zeigt Details zu einem bestimmten Commit (z.B. Änderungen, Nachricht).
+Beispiel: git show 1a2b3c4d
+
+🚫 git reset --hard
+Setzt den aktuellen Branch auf den letzten Commit zurück und verwirft alle Änderungen.
+Beispiel: git reset --hard
+
+🚫 git revert <commit-hash>
+Erstellt einen neuen Commit, der einen vorherigen Commit rückgängig macht (ohne die Historie zu verändern).
+Beispiel: git revert 1a2b3c4d
