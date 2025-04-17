@@ -17,10 +17,9 @@ function App() {
 {/* Attribute werden in CamelCase Schreibweise geschrieben in JSX 
 styles müssen als Javascript Objekte übergeben werden, daher kommt die {{}} schreibweise zustande*/}
     <h1 style={{backgroundColor: "blue", fontSize: "50px"}}>Hier eine Berechnung {zahl * 5}</h1>
-    <p>Hallo aus dem P tag</p>
+    <p className="JoshuasKlasse">Hallo aus dem P tag</p>
     <h2>Hallo lieber {name}</h2>
     {element}
-
     <h3> Hier eine weitere Berechnung {addieren(7,12)}</h3>
 
     </>
