@@ -1,4 +1,4 @@
-
+Danke an Loki für die Hilfreichen Sammlung der Gitbefehle
 🧠 Git-Befehle einfach erklärt
 
 🔍 git status
