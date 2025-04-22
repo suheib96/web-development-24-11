@@ -1,0 +1,13 @@
+.listing-tile {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 300px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s;
+}
+
+.listing-tile:hover {
+  transform: scale(1.05);
+}
