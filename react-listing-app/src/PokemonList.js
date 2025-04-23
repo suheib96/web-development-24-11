@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import "./PokemonList.css";
 
@@ -29,6 +30,8 @@ function PokemonList() {
 
 
   return (
+        <>
+        <Link to="/">Häuser</Link>
     <div className="containerList">
       {pokemons.map((pokemon) => (
         <PokemonCard
@@ -41,6 +44,7 @@ function PokemonList() {
         ></PokemonCard>
       ))}
     </div>
+    </>
   );
 }
 
