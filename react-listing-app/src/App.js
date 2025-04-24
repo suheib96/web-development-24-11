@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Listing from './Listing';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function App() {
 const [anzahl, setAnzahl] = useState(1);
@@ -15,6 +16,7 @@ const [anzahl, setAnzahl] = useState(1);
   ]
   return (
     <div className="HouseContainer">
+      <Link to="/pokemon">Pokemon</Link>
     {houses.slice(0, anzahl).map((house) => 
       <Listing key={house.Id} Name={house.Name} Preis={house.Preis} image={house.image} verfügbarkeit={house.active} reserviert={house.reserviert}> </Listing>
     )}
