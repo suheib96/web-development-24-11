@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function PokemonCard(props) {
   return (
-    <Link style={{textDecoration: "none"}} to="/pokedex">
+    <Link style={{textDecoration: "none"}} to={`/pokedex/${props.id}`}>
     <div className='container'>
         <img src={props.image} width={"200px"} ></img>
         <h2>Name: {props.Name}</h2>

@@ -19,7 +19,7 @@ root.render(
         <Route path="/" element={<App></App>}></Route>
         <Route path="/contact" element={<Kontakt></Kontakt>}></Route>
         <Route path="/pokemon" element={<PokemonList></PokemonList>}></Route>
-        <Route path="/pokedex" element={<Pokedex></Pokedex>}></Route>
+        <Route path="/pokedex/:id" element={<Pokedex></Pokedex>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>

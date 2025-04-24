@@ -36,6 +36,7 @@ function PokemonList() {
         {pokemons.map((pokemon) => (
           <PokemonCard
             key={pokemon.id}
+            id={pokemon.id}
             image={pokemon.sprites.front_default}
             Name={pokemon.name}
             Gewicht={pokemon.weight}
