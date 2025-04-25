@@ -1,0 +1,6 @@
+sqlite3 tiere.db -> damit könnt ihr dann im Terminal SQL Befehle ausführen
+
+wie z.B:
+SELECT * FROM tiere;
+
+.table -> zeigt man sich alle existierende Tabellen in der Datenbank an ( aktuell bei uns nur die Tabelle tiere)
