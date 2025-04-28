@@ -36,6 +36,8 @@ db.serialize(() => {
 const express = require("express");
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 const PORT = 5005;
 app.use(express.json()) // Dieser Code ermöglicht uns einen Body in dem Request zu haben
