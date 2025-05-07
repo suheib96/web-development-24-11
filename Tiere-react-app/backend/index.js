@@ -37,7 +37,7 @@ const express = require("express");
 
 const app = express();
 const cors = require('cors');
-app.use(cors());
+app.use(cors("http://localhost:3000"));
 
 const PORT = 5005;
 app.use(express.json()) // Dieser Code ermöglicht uns einen Body in dem Request zu haben
